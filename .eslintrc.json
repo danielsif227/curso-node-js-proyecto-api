@@ -1,0 +1,9 @@
+{
+    "extends": "standard",
+    "rules": {
+        "no-const-assign":"error",
+        "no-var":"error",
+        "prefer-arrow-callback":"error",
+        "prefer-const": "error"
+    }
+}
