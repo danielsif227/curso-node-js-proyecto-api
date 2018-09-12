@@ -3,6 +3,15 @@ const app = express()
 const bodyParser = require('body-parser')
 const router = require('./routes') // coje el index.js de dentro de la carpeta
 const port = process.env.PORT || 8080 // establecemos nuestro puerto
+const Cerveza = require('./models/Cerveza.js')
+
+require('./db.js')
+
+const miCerveza = new Cerveza({ nombre: 'Ambar' })
+miCerveza.save((err, miCerveza) => {
+  if (err) return console.error(err)
+  console.log(`Guardada en bbdd ${miCerveza.nombre}`)
+})
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
